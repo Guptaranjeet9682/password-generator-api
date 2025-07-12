@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
-module.exports = (req, res) => {
+export default function handler(req, res) {
   const { key } = req.query;
   
   try {
@@ -14,4 +14,4 @@ module.exports = (req, res) => {
   } catch (e) {
     res.status(200).json({ valid: false, error: e.message });
   }
-};
+}
